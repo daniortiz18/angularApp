@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="form1">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text">Name:</label>
+                    <input class="form-control" id="name" type="text" formControlName="name" required maxLength="4">
+                    <br>
+                    <label>Phone:</label>
+                    
+                    <input id="phone" type="text" formControlName="phone">
+                    <br>
+                    <label>Email:</label>
+                    
+                    <input id="email" type="email" formControlName="email">
+                    <br>
+                </div>
+            </div>
+            
+            <button type="submit" [disabled]="!form1.valid" (click)="getData()">Submit</button>
+        </form>
+    </div>
+    
+    <div class="row">
+        <ul>
+            <li *ngIf="resp">{{ resp.icon_url}}</li>
+            <li *ngIf="resp">{{ resp.value}}</li>
+            <li>Combine Latest</li>
+            <li *ngIf="joke2">{{ joke1.joke1.value}}</li>
+            <li *ngIf="joke2">{{ joke1.joke2.value}}</li>
+        </ul>
+    </div>    
+</div>
+
+
